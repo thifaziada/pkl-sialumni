@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Scaffold Bootstrap Template - Index</title>
+  <title>Landing Page</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  {{-- <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon"> --}}
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -27,13 +27,6 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Scaffold
-  * Updated: Jan 09 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/scaffold-bootstrap-metro-style-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
@@ -43,47 +36,47 @@
     <div class="container d-flex align-items-center">
 
       <div class="logo me-auto">
-        <h1><a href="index.html">Scaffold</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+            {{-- <h1><a href="index.html">Scaffold</a></h1> --}}
+            <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="#" style="display: inline-block;"><img src="https://ir.elitery.com/uploads/media/ELITERY%20LOGO%20V2-05%20(1)%20(3).png" alt="" class="img-fluid"></a>
       </div>
-
+        
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li class="dropdown"><a href="#"><span>About</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a class="nav-link scrollto" href="#about">About Us</a></li>
-              <li><a class="nav-link scrollto" href="#team">Team</a></li>
-              <li><a class="nav-link scrollto" href="#testimonials">Testimonials</a></li>
-              <li class="dropdown"><a href="#"><span>Deep Drop Down</span> <i class="bi bi-chevron-right"></i></a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
+              <li><a class="nav-link scrollto" href="#agenda">Agenda</a></li>
+              <li><a class="nav-link scrollto" href="#alumni">Alumni</a></li>
+              <li><a class="nav-link scrollto" href="#login">Login</a></li>
             </ul>
           </li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
-          <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#pricing">Pricing</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <div class="header-social-links d-flex align-items-center">
-        <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
-      </div>
-
     </div>
   </header><!-- End Header -->
+
+  <style>
+    #hero {
+      background: url('assets/img/bgelitery.png') center center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+
+    #hero .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    #hero h1,
+    #hero h2,
+    #hero .btn-get-started {
+      color: #fff; /* Set text color to white or your preferred color */
+    }
+  </style>
+</head>
+<body>
 
   <!-- ======= Hero Section ======= -->
   <section id="hero">
@@ -92,15 +85,16 @@
       <div class="row">
         <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="fade-up">
           <div>
-            <h1>We design digital products that help grow businesses</h1>
-            <h2>We are team of talented designers making websites with Bootstrap</h2>
-            <a href="#about" class="btn-get-started scrollto">Get Started</a>
+            <h1>Alumni</h1>
+            <h2>Your presence within Elitery is enduring, and Elitery's presence within you is everlasting.</h2>
+            <a href="#login" class="btn-get-started scrollto">Join Our Online Community</a>
           </div>
+        {{-- </div>
+        <div class="col-lg-6 order-1 order-lg-2 " data-aos="fade-left">
+          <!-- You can keep this img tag or remove it based on your needs -->
+          <img src="assets/img/bgelitery.png" class="img-fluid" alt="">
         </div>
-        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left">
-          <img src="assets/img/hero-img.png" class="img-fluid" alt="">
-        </div>
-      </div>
+      </div> --}}
     </div>
 
   </section><!-- End Hero -->
@@ -117,18 +111,11 @@
           </div>
           <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
             <div class="content pt-4 pt-lg-0">
-              <h3>Learn more about us</h3>
+              <h3>why join us?</h3>
               <p class="fst-italic">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                magna aliqua.
-              </p>
-              <ul>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                <li><i class="bi bi-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                <li><i class="bi bi-check-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperd</li>
-              </ul>
-              <p>
-                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate tera noden carma palorp mades tera.
+                Alumni kami selalu ada untuk Anda, bahkan setelah Anda melangkah ke petualangan baru dalam kehidupan dan karier. 
+                Tetap terhubung dengan rekan-rekan kerja masa lalu dan manfaatkan berbagai sumber daya dengan tetap terdaftar. 
+                Nikmati keuntungan terhubung dengan alumni lain. Mari tetap berkomunikasi dan manfaatkan hubungan yang telah kita bangun bersama! 
               </p>
             </div>
           </div>
@@ -138,7 +125,7 @@
     </section><!-- End About Section -->
 
     <!-- ======= Features Section ======= -->
-    <section id="features" class="features">
+    <section id="agenda" class="agenda">
       <div class="container">
 
         <div class="row">
@@ -417,7 +404,7 @@
     </section><!-- End Cta Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    <section id="testimonials" class="testimonials">
+    <section id="alumni" class="alumni">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
