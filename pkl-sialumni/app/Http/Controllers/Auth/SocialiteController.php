@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Alumni;
 use App\Models\SocialAccount;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 
 class SocialiteController extends Controller
@@ -31,7 +33,15 @@ class SocialiteController extends Controller
         Auth()->login($authUser, true);
 
         // setelah login redirect ke dashboard
-        return redirect()->route('dashboard');
+        $user = Auth::user();
+        $alumni = Alumni::where('id', $user->id)->first();
+        if (!$alumni) {
+            return redirect()->route('profile.create', ['id' => Auth::user()->id]);
+        }
+        elseif ($alumni && $alumni->status == 'not verified') {
+            return redirect()->route('profile.create', ['id' => Auth::user()->id]);
+        }
+        return redirect()->route('alumni.dashboard');
     }
 
     public function findOrCreateUser($socialUser, $provider)

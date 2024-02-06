@@ -49,4 +49,16 @@ class User extends Authenticatable
     {
         return $this->hasMany(SocialAccount::class);
     }
+    public function alumni()
+    {
+        return $this->hasOne(Alumni::class, 'id');
+    }
+    public function hasRole($role)
+    {
+        return $this->role === $role;
+    }
+    public function isAdmin()
+    {
+        return $this->role === 'admin';
+    }
 }

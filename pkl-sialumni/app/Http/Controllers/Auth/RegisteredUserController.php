@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Alumni;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
@@ -46,6 +47,13 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
 
+        $alumni = Alumni::where('id', Auth::user()->id)->first();
+        if (!$alumni) {
+            return redirect()->route('profile.create', ['id' => Auth::user()->id]);
+        }
+        elseif ($alumni && $alumni->status == 'not verified') {
+            return redirect()->route('profile.create', ['id' => Auth::user()->id]);
+        }
         return redirect(RouteServiceProvider::HOME);
     }
 }

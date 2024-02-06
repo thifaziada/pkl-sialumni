@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
+use App\Models\Alumni;
+use App\Models\Admin;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -29,8 +31,20 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerate();
 
+        if (Auth::user()->isAdmin()) {
+            return redirect()->route('admin.dashboard');
+        }
+
+        $alumni = Alumni::where('id', Auth::user()->id)->first();
+        if (!$alumni) {
+            return redirect()->route('profile.create', ['id' => Auth::user()->id]);
+        } elseif ($alumni && $alumni->status == 'not verified') {
+            return redirect()->route('profile.create', ['id' => Auth::user()->id]);
+        }
+
         return redirect()->intended(RouteServiceProvider::HOME);
     }
+
 
     /**
      * Destroy an authenticated session.
